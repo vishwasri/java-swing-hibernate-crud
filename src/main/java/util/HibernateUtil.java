@@ -5,7 +5,11 @@
  */
 package util;
 
+import model.ItemColor;
+import model.MyUnit;
+import model.Sku;
 import model.Student;
+import model.Unit;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -28,10 +32,15 @@ public class HibernateUtil {
                     .setProperty(Environment.USER, "root")
                     .setProperty(Environment.PASS, "1234")
                     .setProperty(Environment.DIALECT, "org.hibernate.dialect.MySQL8Dialect")
-                    .setProperty(Environment.HBM2DDL_AUTO, "create")
-                    .setProperty(Environment.SHOW_SQL, "true");
+                    .setProperty(Environment.HBM2DDL_AUTO, "update")
+                    .setProperty(Environment.SHOW_SQL, "true")
+                    .setProperty(Environment.HIGHLIGHT_SQL, "true");
 
             configuration.addAnnotatedClass(Student.class);
+            configuration.addAnnotatedClass(MyUnit.class);
+            configuration.addAnnotatedClass(Unit.class);
+            configuration.addAnnotatedClass(Sku.class);
+            configuration.addAnnotatedClass(ItemColor.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties())

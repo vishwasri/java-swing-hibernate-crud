@@ -3,6 +3,13 @@
   <persistence-unit name="com.qoden_HibernateDemo_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>model.ItemColor</class>
+    <class>model.MItem</class>
+    <class>model.ItemColor_1</class>
+    <class>model.Unit</class>
+    <class>model.MItemCategory</class>
+    <class>model.Sizes</class>
+    <class>model.UserRole</class>
+    <class>model.Sku</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pos"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
